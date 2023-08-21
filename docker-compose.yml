@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
   tradeapp:
     build:
@@ -30,6 +30,8 @@ services:
       MYSQL_PASSWORD: mypassword  # Set the password for the user
     ports:
      - "3306:3306" # Expose MySQL container's port 3306 to your host machine
+    volumes:
+      - ./mysql-dump:/docker-entrypoint-initdb.d
 
   mongo:
     image: mongo
@@ -39,7 +41,9 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
       MONGO_INITDB_DATABASE: mydb
-      
+    volumes:
+      - ./mongo-dump:/docker-entrypoint-initdb.d  
+
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
