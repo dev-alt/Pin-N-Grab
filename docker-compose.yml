@@ -2,19 +2,19 @@ version: '3'
 services:
   tradeapp:
     build:
-      context: ./tradeapp
+      context: ./Submodules/tradeapp
     ports:
       - "3010:3000"
 
   tradeapp-dashboard:
     build:
-      context: ./tradeapp-dashboard
+      context: ./Submodules/tradeapp-dashboard
     ports:
       - "3011:3000"
 
   tradeapp-backend:
     build:
-      context: ./tradeapp-backend
+      context: ./Submodules/tradeapp-backend
     ports:
       - "5050:5000"
     environment:
