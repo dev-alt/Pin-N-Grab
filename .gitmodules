@@ -7,3 +7,6 @@
 [submodule "tradeapp"]
 	path = tradeapp
 	url = https://github.com/dev-alt/tradeapp.git
+[submodule "Submodules/tradeapp"]
+	path = Submodules/tradeapp
+	url = https://github.com/dev-alt/tradeapp.git
