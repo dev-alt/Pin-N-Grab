@@ -42,7 +42,7 @@ services:
     environment:
       PMA_HOST: mysql  # Replace with your MySQL container's service name
       PMA_USER: root   # MySQL username
-      PMA_PASSWORD: root  # MySQL password
+      PMA_PASSWORD: root  # MySQL passwords
 
   tradeapp-backend:
     build:
