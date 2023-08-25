@@ -12,15 +12,6 @@ services:
     ports:
       - "3011:3000"
 
-  tradeapp-backend:
-    build:
-      context: ./Submodules/tradeapp-backend
-    ports:
-      - "5050:5000"
-    environment:
-      DB_HOST: mysql  # Link to MySQL service name
-      MONGO_URL: mongodb://mongo:27017/mydb  # Link to MongoDB service name
-
   mysql:
     image: mysql
     environment:
@@ -51,4 +42,13 @@ services:
     environment:
       PMA_HOST: mysql  # Replace with your MySQL container's service name
       PMA_USER: root   # MySQL username
-      PMA_PASSWORD: root  # MySQL password
+      PMA_PASSWORD: root  # MySQL passwords
+
+  tradeapp-backend:
+    build:
+      context: ./Submodules/tradeapp-backend
+    ports:
+      - "5050:5000"
+    environment:
+      DB_HOST: mysql  # Link to MySQL service name
+      MONGO_URL: mongodb://mongo:27017/mydb  # Link to MongoDB service name
