@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 services:
   tradeapp:
     build:
@@ -6,43 +6,26 @@ services:
     ports:
       - "3010:3000"
 
-  tradeapp-dashboard:
-    build:
-      context: ./Submodules/tradeapp-dashboard
-    ports:
-      - "3011:3000"
-
   mysql:
     image: mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: mydb
-      MYSQL_USER: myuser  # Set the username you want to use
-      MYSQL_PASSWORD: mypassword  # Set the password for the user
+      MYSQL_USER: myuser # Set the username you want to use
+      MYSQL_PASSWORD: mypassword # Set the password for the user
     ports:
-     - "3306:3306" # Expose MySQL container's port 3306 to your host machine
+      - "3306:3306" # Expose MySQL container's port 3306 to your host machine
     volumes:
       - ./mysql-dump:/docker-entrypoint-initdb.d
-
-  mongo:
-    image: mongo
-    ports:
-      - "27017:27017"
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: root
-      MONGO_INITDB_DATABASE: mydb
-    volumes:
-      - ./mongo-dump:/docker-entrypoint-initdb.d  
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
       - "8080:80"
     environment:
-      PMA_HOST: mysql  # Replace with your MySQL container's service name
-      PMA_USER: root   # MySQL username
-      PMA_PASSWORD: root  # MySQL passwords
+      PMA_HOST: mysql # Replace with your MySQL container's service name
+      PMA_USER: root # MySQL username
+      PMA_PASSWORD: root # MySQL passwords
 
   tradeapp-backend:
     build:
@@ -50,5 +33,5 @@ services:
     ports:
       - "5050:5000"
     environment:
-      DB_HOST: mysql  # Link to MySQL service name
-      MONGO_URL: mongodb://mongo:27017/mydb  # Link to MongoDB service name
+      DB_HOST: mysql # Link to MySQL service name
+      MONGO_URL: mongodb://mongo:27017/mydb # Link to MongoDB service name
