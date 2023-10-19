@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Oct 18, 2023 at 08:25 PM
+-- Generation Time: Oct 19, 2023 at 10:01 PM
 -- Server version: 8.1.0
 -- PHP Version: 8.2.8
 
@@ -31,7 +31,7 @@ CREATE TABLE `Applications` (
   `id` int NOT NULL,
   `applicationText` text NOT NULL,
   `createdAt` datetime NOT NULL,
-  `updatedAt` datetime DEFAULT CURRENT_TIMESTAMP,
+  `updatedAt` datetime NOT NULL,
   `user_id` int DEFAULT NULL,
   `job_id` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -71,34 +71,6 @@ INSERT INTO `Categories` (`id`, `name`, `createdAt`, `updatedAt`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Email`
---
-
-CREATE TABLE `Email` (
-  `id` int NOT NULL,
-  `subject` varchar(255) NOT NULL,
-  `date` datetime NOT NULL,
-  `content` text NOT NULL,
-  `isStarred` tinyint(1) DEFAULT '0',
-  `isDeleted` tinyint(1) DEFAULT '0',
-  `createdAt` datetime NOT NULL,
-  `updatedAt` datetime NOT NULL,
-  `senderUserId` int DEFAULT NULL,
-  `recipientUserId` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `Email`
---
-
-INSERT INTO `Email` (`id`, `subject`, `date`, `content`, `isStarred`, `isDeleted`, `createdAt`, `updatedAt`, `senderUserId`, `recipientUserId`) VALUES
-(4, 'Test Email', '2023-09-30 08:30:00', 'This is the content of the email.', 0, 0, '2023-09-29 19:35:00', '2023-09-29 19:35:00', NULL, NULL),
-(5, 'Test Email', '2023-09-30 08:30:00', 'This is the content of the email.', 0, 0, '2023-09-29 20:04:23', '2023-09-29 20:04:23', 20, NULL),
-(6, 'Test Email', '2023-09-30 08:30:00', 'This is the content of the email.', 0, 0, '2023-09-29 20:06:32', '2023-09-29 20:06:32', 20, NULL);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `Jobs`
 --
 
@@ -106,10 +78,10 @@ CREATE TABLE `Jobs` (
   `id` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
-  `details` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `details` text NOT NULL,
   `deadline` date NOT NULL,
   `paymentAmount` decimal(10,2) NOT NULL,
-  `jobStatus` enum('Open','Completed','Closed','Deleted') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `jobStatus` enum('Open','Completed','Closed','Deleted') NOT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   `user_id` int DEFAULT NULL,
@@ -149,8 +121,7 @@ INSERT INTO `Jobs` (`id`, `title`, `description`, `details`, `deadline`, `paymen
 (35, 'Floral Garden Caretaker', 'Seeking a Floral Garden Caretaker to maintain a variety of flower gardens.', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-18', 765.80, 'Open', '2023-10-13 00:40:32', '2023-10-13 00:40:32', 31, 3, 44, NULL),
 (36, 'Horticulture Expert', 'Talented Horticulture Expert required for managing plant collections in a public garden.', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-22', 993.09, 'Open', '2023-10-13 00:40:36', '2023-10-13 00:40:36', 30, 3, 62, NULL),
 (37, 'Landscape Architect', 'Experienced Landscape Architect needed to design and plan outdoor spaces.', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-25', 668.05, 'Open', '2023-10-13 00:40:39', '2023-10-13 00:40:39', 32, 3, 81, NULL),
-(41, 'Landscape Architect', 'Experienced Landscape Architect needed to design and plan outdoor spaces.', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-25', 356.00, 'Open', '2023-10-14 02:04:14', '2023-10-14 02:04:14', 31, 3, 23, NULL),
-(44, 'Gardener wanted', 'I need of a gardener on friday the 15th', 'Clean weeds and trim', '2023-10-31', 500.00, 'Open', '2023-10-16 01:15:20', '2023-10-16 01:15:20', 20, 3, 31, NULL);
+(41, 'Landscape Architect', 'Experienced Landscape Architect needed to design and plan outdoor spaces.', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-25', 356.00, 'Open', '2023-10-14 02:04:14', '2023-10-14 02:04:14', 31, 3, 23, NULL);
 
 -- --------------------------------------------------------
 
@@ -160,7 +131,7 @@ INSERT INTO `Jobs` (`id`, `title`, `description`, `details`, `deadline`, `paymen
 
 CREATE TABLE `Locations` (
   `id` int NOT NULL,
-  `regionName` varchar(255) DEFAULT NULL,
+  `regionName` varchar(255) NOT NULL,
   `cityName` varchar(255) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL
@@ -265,6 +236,35 @@ INSERT INTO `Locations` (`id`, `regionName`, `cityName`, `createdAt`, `updatedAt
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `Messages`
+--
+
+CREATE TABLE `Messages` (
+  `id` int NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `date` datetime NOT NULL,
+  `content` text NOT NULL,
+  `isDeleted` tinyint(1) DEFAULT '0',
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  `senderUserId` int DEFAULT NULL,
+  `recipientUserId` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `Messages`
+--
+
+INSERT INTO `Messages` (`id`, `subject`, `date`, `content`, `isDeleted`, `createdAt`, `updatedAt`, `senderUserId`, `recipientUserId`) VALUES
+(1, 'helllo', '2023-10-19 09:36:36', 'asdf', 0, '2023-10-19 09:36:36', '2023-10-19 09:36:36', 20, 24),
+(2, 'asdf', '2023-10-19 09:56:15', 'asdf', 0, '2023-10-19 09:56:15', '2023-10-19 09:56:15', 38, 20),
+(3, 'asdf', '2023-10-19 09:58:25', 'asdfdfsadf', 0, '2023-10-19 09:58:26', '2023-10-19 09:58:26', 20, 20),
+(4, 'Hello rain', '2023-10-19 10:02:07', 'testing message', 0, '2023-10-19 10:02:08', '2023-10-19 10:02:08', 20, 24),
+(5, 'hi Bob', '2023-10-19 10:03:24', 'hi', 0, '2023-10-19 10:03:24', '2023-10-19 10:03:24', 24, 20);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `SavedJobs`
 --
 
@@ -272,8 +272,8 @@ CREATE TABLE `SavedJobs` (
   `id` int NOT NULL,
   `userId` int NOT NULL,
   `jobId` int NOT NULL,
-  `createdAt` datetime DEFAULT CURRENT_TIMESTAMP,
-  `updatedAt` datetime DEFAULT CURRENT_TIMESTAMP
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -281,15 +281,15 @@ CREATE TABLE `SavedJobs` (
 --
 
 INSERT INTO `SavedJobs` (`id`, `userId`, `jobId`, `createdAt`, `updatedAt`) VALUES
-(16, 20, 15, '2023-10-15 07:40:54', '2023-10-15 07:40:54'),
-(19, 20, 15, '2023-10-15 07:41:53', '2023-10-15 07:41:53'),
-(31, 20, 15, '2023-10-17 23:30:10', '2023-10-17 23:30:10'),
-(35, 20, 19, '2023-10-18 06:32:59', '2023-10-18 06:32:59'),
-(36, 20, 22, '2023-10-18 06:33:00', '2023-10-18 06:33:00'),
 (37, 24, 15, '2023-10-18 08:09:40', '2023-10-18 08:09:40'),
 (38, 24, 12, '2023-10-18 08:09:59', '2023-10-18 08:09:59'),
 (39, 24, 16, '2023-10-18 08:10:01', '2023-10-18 08:10:01'),
-(40, 24, 17, '2023-10-18 08:10:03', '2023-10-18 08:10:03');
+(40, 24, 17, '2023-10-18 08:10:03', '2023-10-18 08:10:03'),
+(45, 20, 14, '2023-10-18 21:35:14', '2023-10-18 21:35:14'),
+(46, 20, 14, '2023-10-18 21:35:16', '2023-10-18 21:35:16'),
+(51, 20, 16, '2023-10-18 21:35:46', '2023-10-18 21:35:46'),
+(53, 20, 21, '2023-10-18 21:35:48', '2023-10-18 21:35:48'),
+(73, 20, 13, '2023-10-19 10:13:44', '2023-10-19 10:13:44');
 
 -- --------------------------------------------------------
 
@@ -320,7 +320,8 @@ INSERT INTO `SequelizeMeta` (`name`) VALUES
 ('20231017050820-create-application.js'),
 ('20231017051841-create-applications.js'),
 ('20231017051927-create-applications.js'),
-('20231017052007-create-applications.js');
+('20231017052007-create-applications.js'),
+('20231019092829-update-message-model.js');
 
 -- --------------------------------------------------------
 
@@ -332,8 +333,8 @@ CREATE TABLE `UserProfiles` (
   `id` int NOT NULL,
   `dateOfBirth` date DEFAULT NULL,
   `gender` varchar(255) DEFAULT NULL,
-  `bio` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
-  `avatar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `bio` text,
+  `avatar` varchar(255) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   `UserId` int DEFAULT NULL
@@ -366,7 +367,7 @@ INSERT INTO `UserProfiles` (`id`, `dateOfBirth`, `gender`, `bio`, `avatar`, `cre
 (41, '1970-06-09', 'Female', 'Hi, I am noahjohnson888, and I am passionate about exploring the frontiers of technology.', '27', '2023-10-16 00:24:55', '2023-10-16 00:24:55', 42),
 (42, '1983-01-12', 'Male', 'Hi, I am isabellabrown123, and I am driven by a desire to innovate and create positive change.', '8', '2023-10-16 00:25:03', '2023-10-16 00:25:03', 43),
 (43, '1992-11-07', 'Male', 'Hi, I am a user with no specific bio.', '9', '2023-10-16 00:25:08', '2023-10-16 00:25:08', 44),
-(44, NULL, NULL, NULL, NULL, '2023-10-18 05:18:04', '2023-10-18 05:18:04', 50);
+(47, NULL, NULL, NULL, NULL, '2023-10-19 21:35:39', '2023-10-19 21:35:39', NULL);
 
 -- --------------------------------------------------------
 
@@ -376,13 +377,13 @@ INSERT INTO `UserProfiles` (`id`, `dateOfBirth`, `gender`, `bio`, `avatar`, `cre
 
 CREATE TABLE `UserReviews` (
   `id` int NOT NULL,
-  `type` enum('Client','Worker') NOT NULL,
+  `type` enum('Worker','Client') NOT NULL,
   `reviewText` text NOT NULL,
   `rating` int NOT NULL,
   `jobId` int NOT NULL,
   `reviewerUserId` int NOT NULL,
-  `createdAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updatedAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -420,7 +421,6 @@ INSERT INTO `UserReviews` (`id`, `type`, `reviewText`, `rating`, `jobId`, `revie
 (34, 'Worker', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.', 5, 28, 39, '2023-10-16 00:58:30', '2023-10-16 00:58:30'),
 (35, 'Worker', 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.', 4, 12, 43, '2023-10-16 00:58:30', '2023-10-16 01:12:46'),
 (36, 'Worker', 'Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.', 5, 12, 27, '2023-10-16 01:13:43', '2023-10-16 01:13:43'),
-(37, 'Worker', 'Excellent service, would recommended. Very efficent', 5, 44, 27, '2023-10-16 01:16:45', '2023-10-16 01:16:45'),
 (38, 'Worker', 'Excellent service', 5, 31, 40, '2023-10-16 01:22:20', '2023-10-16 01:22:20'),
 (39, 'Worker', 'Great service', 5, 26, 20, '2023-10-16 01:23:54', '2023-10-16 01:23:54');
 
@@ -467,8 +467,7 @@ INSERT INTO `Users` (`id`, `username`, `email`, `password`, `firstName`, `lastNa
 (41, 'masonlewis90', 'masonlewis90@example.com', '$2b$10$n8mf8/VCHyZPoRjPv4dhT.4toGw0G8cEY0fDAHGy4dTZiwcYxQdz.', 'Mason', 'Lewis', '2023-10-16 00:24:45', '2023-10-16 00:24:45'),
 (42, 'chloeclark567', 'chloeclark567@example.com', '$2b$10$XBH4EwwSTJ7FrSAVZ9lmQuBbE7jlD5MHfoQtuR3DJh6CheZ1q39ZK', 'Chloe', 'Clark', '2023-10-16 00:24:55', '2023-10-16 00:24:55'),
 (43, 'noahjohnson888', 'noahjohnson888@example.com', '$2b$10$nFq/qGPFJKMxUF6m20Vwb.vcGWrhiN.V9.2sf2ObnLogmC0Rv9dHy', 'Noah', 'Johnson', '2023-10-16 00:25:03', '2023-10-16 00:25:03'),
-(44, 'isabellabrown123', 'isabellabrown123@example.com', '$2b$10$5UO8M9BSJjkebg6TC8BTYe9YLgAWFPhKZevbchwnqmyXBsD4rZFPi', 'Isabella', 'Brown', '2023-10-16 00:25:08', '2023-10-16 00:25:08'),
-(50, 'sprinter92', 's.m@smith.com', '$2b$10$OuJay3w/rU2DAgdLUFBePu3VPgbjceL7Rp1cX/pgBLsGy0qBKoS1e', 'spring', 'master', '2023-10-18 05:18:04', '2023-10-18 05:18:04');
+(44, 'isabellabrown123', 'isabellabrown123@example.com', '$2b$10$5UO8M9BSJjkebg6TC8BTYe9YLgAWFPhKZevbchwnqmyXBsD4rZFPi', 'Isabella', 'Brown', '2023-10-16 00:25:08', '2023-10-16 00:25:08');
 
 --
 -- Indexes for dumped tables
@@ -489,14 +488,6 @@ ALTER TABLE `Categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `Email`
---
-ALTER TABLE `Email`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `senderId` (`senderUserId`),
-  ADD KEY `recipientId` (`recipientUserId`);
-
---
 -- Indexes for table `Jobs`
 --
 ALTER TABLE `Jobs`
@@ -511,6 +502,14 @@ ALTER TABLE `Jobs`
 --
 ALTER TABLE `Locations`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `Messages`
+--
+ALTER TABLE `Messages`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `senderUserId` (`senderUserId`),
+  ADD KEY `recipientUserId` (`recipientUserId`);
 
 --
 -- Indexes for table `SavedJobs`
@@ -547,6 +546,7 @@ ALTER TABLE `UserReviews`
 --
 ALTER TABLE `Users`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email_index` (`email`) USING BTREE,
   ADD UNIQUE KEY `email` (`email`),
   ADD UNIQUE KEY `email_2` (`email`),
   ADD UNIQUE KEY `email_3` (`email`),
@@ -557,59 +557,7 @@ ALTER TABLE `Users`
   ADD UNIQUE KEY `email_8` (`email`),
   ADD UNIQUE KEY `email_9` (`email`),
   ADD UNIQUE KEY `email_10` (`email`),
-  ADD UNIQUE KEY `email_11` (`email`),
-  ADD UNIQUE KEY `email_12` (`email`),
-  ADD UNIQUE KEY `email_13` (`email`),
-  ADD UNIQUE KEY `email_14` (`email`),
-  ADD UNIQUE KEY `email_15` (`email`),
-  ADD UNIQUE KEY `email_16` (`email`),
-  ADD UNIQUE KEY `email_17` (`email`),
-  ADD UNIQUE KEY `email_18` (`email`),
-  ADD UNIQUE KEY `email_19` (`email`),
-  ADD UNIQUE KEY `email_20` (`email`),
-  ADD UNIQUE KEY `email_21` (`email`),
-  ADD UNIQUE KEY `email_22` (`email`),
-  ADD UNIQUE KEY `email_23` (`email`),
-  ADD UNIQUE KEY `email_24` (`email`),
-  ADD UNIQUE KEY `email_25` (`email`),
-  ADD UNIQUE KEY `email_26` (`email`),
-  ADD UNIQUE KEY `email_27` (`email`),
-  ADD UNIQUE KEY `email_28` (`email`),
-  ADD UNIQUE KEY `email_29` (`email`),
-  ADD UNIQUE KEY `email_30` (`email`),
-  ADD UNIQUE KEY `email_31` (`email`),
-  ADD UNIQUE KEY `email_32` (`email`),
-  ADD UNIQUE KEY `email_33` (`email`),
-  ADD UNIQUE KEY `email_34` (`email`),
-  ADD UNIQUE KEY `email_35` (`email`),
-  ADD UNIQUE KEY `email_36` (`email`),
-  ADD UNIQUE KEY `email_37` (`email`),
-  ADD UNIQUE KEY `email_38` (`email`),
-  ADD UNIQUE KEY `email_39` (`email`),
-  ADD UNIQUE KEY `email_40` (`email`),
-  ADD UNIQUE KEY `email_41` (`email`),
-  ADD UNIQUE KEY `email_42` (`email`),
-  ADD UNIQUE KEY `email_43` (`email`),
-  ADD UNIQUE KEY `email_44` (`email`),
-  ADD UNIQUE KEY `email_45` (`email`),
-  ADD UNIQUE KEY `email_46` (`email`),
-  ADD UNIQUE KEY `email_47` (`email`),
-  ADD UNIQUE KEY `email_48` (`email`),
-  ADD UNIQUE KEY `email_49` (`email`),
-  ADD UNIQUE KEY `email_50` (`email`),
-  ADD UNIQUE KEY `email_51` (`email`),
-  ADD UNIQUE KEY `email_52` (`email`),
-  ADD UNIQUE KEY `email_53` (`email`),
-  ADD UNIQUE KEY `email_54` (`email`),
-  ADD UNIQUE KEY `email_55` (`email`),
-  ADD UNIQUE KEY `email_56` (`email`),
-  ADD UNIQUE KEY `email_57` (`email`),
-  ADD UNIQUE KEY `email_58` (`email`),
-  ADD UNIQUE KEY `email_59` (`email`),
-  ADD UNIQUE KEY `email_60` (`email`),
-  ADD UNIQUE KEY `email_61` (`email`),
-  ADD UNIQUE KEY `email_62` (`email`),
-  ADD UNIQUE KEY `email_63` (`email`);
+  ADD UNIQUE KEY `email_11` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -628,16 +576,10 @@ ALTER TABLE `Categories`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `Email`
---
-ALTER TABLE `Email`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
 -- AUTO_INCREMENT for table `Jobs`
 --
 ALTER TABLE `Jobs`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `Locations`
@@ -646,16 +588,22 @@ ALTER TABLE `Locations`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
+-- AUTO_INCREMENT for table `Messages`
+--
+ALTER TABLE `Messages`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `SavedJobs`
 --
 ALTER TABLE `SavedJobs`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT for table `UserProfiles`
 --
 ALTER TABLE `UserProfiles`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `UserReviews`
@@ -667,7 +615,7 @@ ALTER TABLE `UserReviews`
 -- AUTO_INCREMENT for table `Users`
 --
 ALTER TABLE `Users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- Constraints for dumped tables
@@ -677,45 +625,43 @@ ALTER TABLE `Users`
 -- Constraints for table `Applications`
 --
 ALTER TABLE `Applications`
-  ADD CONSTRAINT `Applications_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `Applications_ibfk_2` FOREIGN KEY (`job_id`) REFERENCES `Jobs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `Email`
---
-ALTER TABLE `Email`
-  ADD CONSTRAINT `Email_ibfk_1` FOREIGN KEY (`senderUserId`) REFERENCES `Users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `Email_ibfk_2` FOREIGN KEY (`recipientUserId`) REFERENCES `Users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD CONSTRAINT `Applications_ibfk_23` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `Applications_ibfk_24` FOREIGN KEY (`job_id`) REFERENCES `Jobs` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Constraints for table `Jobs`
 --
 ALTER TABLE `Jobs`
-  ADD CONSTRAINT `Jobs_ibfk_115` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `Jobs_ibfk_116` FOREIGN KEY (`category_id`) REFERENCES `Categories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `Jobs_ibfk_117` FOREIGN KEY (`location_id`) REFERENCES `Locations` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `Jobs_ibfk_118` FOREIGN KEY (`selected_user`) REFERENCES `Users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD CONSTRAINT `Jobs_ibfk_148` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `Jobs_ibfk_149` FOREIGN KEY (`category_id`) REFERENCES `Categories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `Jobs_ibfk_150` FOREIGN KEY (`location_id`) REFERENCES `Locations` (`id`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `Messages`
+--
+ALTER TABLE `Messages`
+  ADD CONSTRAINT `Messages_ibfk_1` FOREIGN KEY (`senderUserId`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `Messages_ibfk_2` FOREIGN KEY (`recipientUserId`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `SavedJobs`
 --
 ALTER TABLE `SavedJobs`
-  ADD CONSTRAINT `SavedJobs_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `SavedJobs_ibfk_2` FOREIGN KEY (`jobId`) REFERENCES `Jobs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `SavedJobs_ibfk_23` FOREIGN KEY (`userId`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `SavedJobs_ibfk_24` FOREIGN KEY (`jobId`) REFERENCES `Jobs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `UserProfiles`
 --
 ALTER TABLE `UserProfiles`
-  ADD CONSTRAINT `FK_UserProfiles_UserId` FOREIGN KEY (`UserId`) REFERENCES `Users` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `UserProfiles_UserId_foreign_idx` FOREIGN KEY (`UserId`) REFERENCES `Users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD CONSTRAINT `UserProfiles_ibfk_1` FOREIGN KEY (`UserId`) REFERENCES `Users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Constraints for table `UserReviews`
 --
 ALTER TABLE `UserReviews`
-  ADD CONSTRAINT `UserReviews_ibfk_1` FOREIGN KEY (`jobId`) REFERENCES `Jobs` (`id`),
-  ADD CONSTRAINT `UserReviews_ibfk_2` FOREIGN KEY (`reviewerUserId`) REFERENCES `Users` (`id`);
+  ADD CONSTRAINT `UserReviews_ibfk_23` FOREIGN KEY (`jobId`) REFERENCES `Jobs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `UserReviews_ibfk_24` FOREIGN KEY (`reviewerUserId`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
