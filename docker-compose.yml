@@ -1,11 +1,11 @@
 version: "3.8"
 services:
 
-  tradeapp:
-    build:
-      context: ./Submodules/tradeapp
-    ports:
-      - "3010:3000"
+  # tradeapp:
+  #   build:
+  #     context: ./Submodules/tradeapp
+  #   ports:
+  #     - "3010:3000"
 
   mysql:
     image: mysql
