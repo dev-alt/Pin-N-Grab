@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Oct 19, 2023 at 10:01 PM
+-- Generation Time: Oct 27, 2023 at 03:50 AM
 -- Server version: 8.1.0
 -- PHP Version: 8.2.8
 
@@ -42,7 +42,31 @@ CREATE TABLE `Applications` (
 
 INSERT INTO `Applications` (`id`, `applicationText`, `createdAt`, `updatedAt`, `user_id`, `job_id`) VALUES
 (1, 'Applied', '2023-10-17 05:20:32', '2023-10-17 05:21:38', 34, 12),
-(2, 'Applied', '2023-10-17 05:27:24', '2023-10-17 05:27:40', 37, 12);
+(2, 'Applied', '2023-10-17 05:27:24', '2023-10-17 05:27:40', 37, 12),
+(3, '123', '2023-10-20 22:24:32', '2023-10-20 22:24:32', 29, 16),
+(4, '54', '2023-10-20 22:31:26', '2023-10-20 22:31:26', 42, 15),
+(5, 'Your application text goes here', '2023-10-20 22:44:15', '2023-10-20 22:44:15', 20, 41),
+(6, 'Your application text goes here', '2023-10-20 22:46:31', '2023-10-20 22:46:31', 20, 41),
+(7, 'Your application text goes here', '2023-10-20 22:46:37', '2023-10-20 22:46:37', 20, 41),
+(8, 'Your application text goes here', '2023-10-20 22:54:19', '2023-10-20 22:54:19', 20, 37),
+(9, 'Your application text goes here', '2023-10-20 23:13:22', '2023-10-20 23:13:22', 20, 36),
+(10, 'Your application text goes here', '2023-10-20 23:22:27', '2023-10-20 23:22:27', 20, 31),
+(11, 'Your application text goes here', '2023-10-20 23:25:08', '2023-10-20 23:25:08', 20, 33),
+(12, 'Your application text goes here', '2023-10-20 23:41:47', '2023-10-20 23:41:47', 20, 22),
+(13, 'Your application text goes here', '2023-10-20 23:41:59', '2023-10-20 23:41:59', 20, 32),
+(14, 'Your application text goes here', '2023-10-21 01:31:41', '2023-10-21 01:31:41', NULL, 58),
+(15, 'Your application text goes here', '2023-10-21 08:28:12', '2023-10-21 08:28:12', 20, 35),
+(16, 'Your application text goes here', '2023-10-22 07:03:04', '2023-10-22 07:03:04', 24, 30),
+(17, 'Your application text goes here', '2023-10-23 22:11:07', '2023-10-23 22:11:07', NULL, 63),
+(18, 'Your application text goes here', '2023-10-23 22:21:55', '2023-10-23 22:21:55', NULL, 41),
+(19, 'Your application text goes here', '2023-10-23 22:22:50', '2023-10-23 22:22:50', 20, 64),
+(20, 'Your application text goes here', '2023-10-24 00:03:57', '2023-10-24 00:03:57', NULL, 65),
+(21, 'Your application text goes here', '2023-10-24 00:59:30', '2023-10-24 00:59:30', NULL, 37),
+(22, 'Your application text goes here', '2023-10-24 00:59:32', '2023-10-24 00:59:32', NULL, 36),
+(23, 'Your application text goes here', '2023-10-24 01:00:32', '2023-10-24 01:00:32', NULL, 66),
+(24, 'Your application text goes here', '2023-10-24 01:03:41', '2023-10-24 01:03:41', 20, 67),
+(25, 'Your application text goes here', '2023-10-26 13:14:03', '2023-10-26 13:14:03', 24, 77),
+(26, 'Your application text goes here', '2023-10-26 13:17:00', '2023-10-26 13:17:00', 24, 78);
 
 -- --------------------------------------------------------
 
@@ -95,7 +119,7 @@ CREATE TABLE `Jobs` (
 --
 
 INSERT INTO `Jobs` (`id`, `title`, `description`, `details`, `deadline`, `paymentAmount`, `jobStatus`, `createdAt`, `updatedAt`, `user_id`, `category_id`, `location_id`, `selected_user`) VALUES
-(12, 'Electrical Services Technician', 'We are looking for an Electrical Services Technician...', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-31', 1355.09, 'Open', '2023-09-12 23:34:07', '2023-10-12 23:34:07', 20, 1, 81, NULL),
+(12, 'Electrical Services Technician', 'We are looking for an Electrical Services Technician...', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-31', 1355.09, 'Closed', '2023-09-12 23:34:07', '2023-10-25 06:03:30', 20, 1, 81, 24),
 (13, 'Electrician', 'We are hiring experienced electricians for various projects...', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-31', 1752.46, 'Deleted', '2023-10-12 23:35:34', '2023-10-12 23:35:34', 35, 1, 29, NULL),
 (14, 'Journeyman Electrician', 'Join our team as a journeyman electrician with opportunities to advance...', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-31', 702.04, 'Closed', '2023-10-12 23:35:37', '2023-10-12 23:35:37', 32, 1, 14, NULL),
 (15, 'Electrical Engineer', 'Looking for an electrical engineer to lead our projects...', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-31', 242.82, 'Open', '2023-10-12 23:35:40', '2023-10-12 23:35:40', 32, 1, 70, NULL),
@@ -115,13 +139,36 @@ INSERT INTO `Jobs` (`id`, `title`, `description`, `details`, `deadline`, `paymen
 (29, 'Exterior House Painter', 'Experienced Exterior House Painter needed for painting exterior walls and surfaces.', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-20', 16.70, 'Open', '2023-10-13 00:39:12', '2023-10-13 00:39:12', 38, 4, 76, NULL),
 (30, 'Commercial Building Painter', 'Seeking a Commercial Building Painter for painting office and commercial spaces.', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-18', 1233.26, 'Open', '2023-10-13 00:39:15', '2023-10-13 00:39:15', 26, 4, 22, NULL),
 (31, 'Artistic Mural Painter', 'Talented Artistic Mural Painter required for creating stunning mural art pieces.', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-22', 126.20, 'Open', '2023-10-13 00:39:18', '2023-10-13 00:39:18', 41, 4, 54, NULL),
-(32, 'Painting Project Manager', 'Experienced Painting Project Manager needed to oversee painting projects.', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-25', 916.21, 'Open', '2023-10-13 00:39:24', '2023-10-13 00:39:24', 37, 4, 19, NULL),
+(32, 'Painting Project Manager', 'Experienced Painting Project Manager needed to oversee painting projects.', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-25', 916.21, 'Open', '2023-10-13 00:39:24', '2023-10-13 00:39:24', 37, 4, 19, 20),
 (33, 'Landscaping Specialist', 'Hiring a skilled Landscaping Specialist to design and maintain beautiful gardens.', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-15', 207.45, 'Open', '2023-10-13 00:40:25', '2023-10-13 00:40:25', 35, 3, 17, NULL),
 (34, 'Tree Trimming Technician', 'Experienced Tree Trimming Technician needed for pruning and maintaining trees.', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-20', 278.63, 'Open', '2023-10-13 00:40:29', '2023-10-13 00:40:29', 39, 3, 20, NULL),
 (35, 'Floral Garden Caretaker', 'Seeking a Floral Garden Caretaker to maintain a variety of flower gardens.', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-18', 765.80, 'Open', '2023-10-13 00:40:32', '2023-10-13 00:40:32', 31, 3, 44, NULL),
 (36, 'Horticulture Expert', 'Talented Horticulture Expert required for managing plant collections in a public garden.', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-22', 993.09, 'Open', '2023-10-13 00:40:36', '2023-10-13 00:40:36', 30, 3, 62, NULL),
 (37, 'Landscape Architect', 'Experienced Landscape Architect needed to design and plan outdoor spaces.', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-25', 668.05, 'Open', '2023-10-13 00:40:39', '2023-10-13 00:40:39', 32, 3, 81, NULL),
-(41, 'Landscape Architect', 'Experienced Landscape Architect needed to design and plan outdoor spaces.', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-25', 356.00, 'Open', '2023-10-14 02:04:14', '2023-10-14 02:04:14', 31, 3, 23, NULL);
+(41, 'Landscape Architect', 'Experienced Landscape Architect needed to design and plan outdoor spaces.', 'This is a fake job detail description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ac tincidunt. In hac habitasse platea dictumst. Fusce scelerisque lorem ut purus rhoncus, id varius libero congue. Sed nec urna vel purus sagittis bibendum. Quisque sollicitudin risus id facilisis. Vestibulum a quam a ligula tincidunt dictum. Integer vitae mi auctor, bibendum eros vel, egestas arcu. Sed euismod, metus vel posuere venenatis, augue dui facilisis eros, in gravida elit dui sit amet nunc. Nam in odio augue. Sed volutpat, nulla quis viverra hendrerit, elit libero posuere nunc, eu tristique urna risus nec sapien. Nunc eu diam quis lorem volutpat pellentesque. Donec ac nunc purus. Nulla facilisi. Sed a metus turpis. Donec in ligula vitae urna tincidunt egestas. Suspendisse tincidunt at urna vel dapibus.', '2023-12-25', 356.00, 'Open', '2023-10-14 02:04:14', '2023-10-14 02:04:14', 31, 3, 23, NULL),
+(56, 'adsf', 'asdf', 'asdf', '2023-10-31', 4.00, 'Closed', '2023-10-20 08:12:59', '2023-10-22 10:32:07', 20, 1, 27, NULL),
+(57, 'asdf', 'asdf', 'asdf', '2023-10-31', 555.00, 'Closed', '2023-10-20 23:19:11', '2023-10-22 10:32:03', 20, 2, 31, NULL),
+(58, 'asdf', 'asdf', 'asdf', '2023-10-31', 55.00, 'Closed', '2023-10-21 01:25:00', '2023-10-22 10:31:59', 20, 3, 28, NULL),
+(59, 'testasdf', 'testasdf', 'adsfest', '2023-10-31', 55.00, 'Closed', '2023-10-21 06:56:44', '2023-10-22 10:31:55', 20, 2, 23, NULL),
+(60, 'dsvdf', 'sdafdsf', 'asdf', '2023-10-31', 55.00, 'Closed', '2023-10-22 08:51:34', '2023-10-22 10:31:26', 20, 3, 23, NULL),
+(61, 'testjob2002', 'testjob2002', 'testjob2002', '2023-10-31', 5655.00, 'Closed', '2023-10-22 10:33:58', '2023-10-22 10:34:19', 20, 4, 22, NULL),
+(62, 'bbb', 'bbb', 'bb', '2023-10-31', 555.00, 'Closed', '2023-10-22 10:36:41', '2023-10-22 10:54:51', 20, 3, 23, NULL),
+(63, 'test', 'test', 'TEST', '2023-10-31', 555.00, 'Completed', '2023-10-23 22:10:11', '2023-10-24 00:47:36', 20, 3, 21, NULL),
+(64, 'test2', 'test2', 'test', '2023-10-31', 4.00, 'Completed', '2023-10-23 22:22:32', '2023-10-24 00:43:34', NULL, 2, 23, 20),
+(65, 'bobtest', 'tet', 'test', '2023-10-31', 55.00, 'Completed', '2023-10-24 00:03:46', '2023-10-24 00:43:14', 20, 2, 22, NULL),
+(66, 'adsf', 'asdf', 'asdf', '2023-10-31', 55.00, 'Completed', '2023-10-24 01:00:15', '2023-10-24 01:00:49', 20, 5, 19, NULL),
+(67, 'bb', 'bb', 'bb', '2023-10-31', 545.00, 'Completed', '2023-10-24 01:03:15', '2023-10-24 01:03:52', NULL, 3, 24, 20),
+(68, 'b', 'b', 'b', '2023-10-31', 545.00, 'Closed', '2023-10-24 01:34:23', '2023-10-24 03:08:09', 20, 2, 24, NULL),
+(69, 'tradsfasd', 'fasdf', 'asdfa', '2023-10-31', 555.00, 'Closed', '2023-10-24 03:32:25', '2023-10-24 22:39:18', 20, 2, 25, NULL),
+(70, 'vbb', 'bb', 'bdsf', '2023-10-31', 55.00, 'Closed', '2023-10-24 22:10:28', '2023-10-24 22:39:21', 20, 2, 18, NULL),
+(71, 'fds', 'dsf', 'f', '2023-10-31', 555.00, 'Closed', '2023-10-25 06:02:22', '2023-10-25 07:52:51', 20, 2, 24, NULL),
+(72, 'Test', 'Test Description', 'Test Details', '2023-10-31', 60.00, 'Closed', '2023-10-26 00:01:52', '2023-10-26 02:46:29', 20, 3, 22, NULL),
+(73, 'One-time Gardening Help', 'We are seeking someone to provide one-time gardening assistance for a specific project. This is a short-term opportunity suitable for someone available for a single gardening task.', 'Responsibilities:\n\n    Assist with a one-time gardening project.\n    Tasks may include weeding, planting, or light landscaping work.\n\nRequirements:\n\n    No prior experience necessary.\n    Willingness to work outdoors.\n    Availability for a one-time task.\n    Reliable and punctual.\n\nCompensation:\n\n    Payment will be provided for the one-time task.', '2023-10-31', 80.00, 'Closed', '2023-10-26 06:55:06', '2023-10-26 06:55:24', 20, 3, 19, NULL),
+(74, 'One-time Gardening Help', 'We are seeking someone to provide one-time gardening assistance for a specific project. This is a short-term opportunity suitable for someone available for a single gardening task.', 'Responsibilities:\n\n    Assist with a one-time gardening project.\n    Tasks may include weeding, planting, or light landscaping work.\n\nRequirements:\n\n    No prior experience necessary.\n    Willingness to work outdoors.\n    Availability for a one-time task.\n    Reliable and punctual.', '2023-10-31', 80.00, 'Closed', '2023-10-26 06:58:46', '2023-10-26 06:59:14', 20, 3, 9, NULL),
+(75, 'one-time gardening project', 'We are seeking someone to provide one-time gardening assistance for a specific project. This is a short-term opportunity suitable for someone available for a single gardening task.', 'Responsibilities:\n\n    Assist with a one-time gardening project.\n    Tasks may include weeding, planting, or light landscaping work.\n\nRequirements:\n\n    No prior experience necessary.\n    Willingness to work outdoors.\n    Availability for a one-time task.\n    Reliable and punctual.', '2023-10-31', 70.00, 'Closed', '2023-10-26 07:01:09', '2023-10-26 07:01:34', 20, 3, 9, NULL),
+(76, ' one-time gardening assistance', 'We are seeking someone to provide one-time gardening assistance for a specific project. This is a short-term opportunity suitable for someone available for a single gardening task.', 'Responsibilities:\n\n    Assist with a one-time gardening project.\n    Tasks may include weeding, planting, or light landscaping work.\n\nRequirements:\n\n    No prior experience necessary.\n    Willingness to work outdoors.\n    Availability for a one-time task.\n    Reliable and punctual.', '2023-10-31', 70.00, 'Closed', '2023-10-26 07:02:50', '2023-10-26 07:03:46', 20, 3, 20, NULL),
+(77, 'one-time gardening project', '    Assist with a one-time gardening project.\n    Tasks may include weeding, planting, or light landscaping work', 'Responsibilities:\n\n    Assist with a one-time gardening project.\n    Tasks may include weeding, planting, or light landscaping work.\n\nRequirements:\n\n    No prior experience necessary.\n    Willingness to work outdoors.\n    Availability for a one-time task.\n    Reliable and punctual.', '2023-10-31', 80.00, 'Completed', '2023-10-26 07:05:05', '2023-10-26 13:16:02', 20, 3, 19, 24),
+(78, 'test', 'test', 'test', '2023-10-31', 50000.00, 'Open', '2023-10-26 13:16:41', '2023-10-26 13:16:41', 20, 1, 20, NULL);
 
 -- --------------------------------------------------------
 
@@ -248,19 +295,23 @@ CREATE TABLE `Messages` (
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   `senderUserId` int DEFAULT NULL,
-  `recipientUserId` int DEFAULT NULL
+  `recipientUserId` int DEFAULT NULL,
+  `read` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `Messages`
 --
 
-INSERT INTO `Messages` (`id`, `subject`, `date`, `content`, `isDeleted`, `createdAt`, `updatedAt`, `senderUserId`, `recipientUserId`) VALUES
-(1, 'helllo', '2023-10-19 09:36:36', 'asdf', 0, '2023-10-19 09:36:36', '2023-10-19 09:36:36', 20, 24),
-(2, 'asdf', '2023-10-19 09:56:15', 'asdf', 0, '2023-10-19 09:56:15', '2023-10-19 09:56:15', 38, 20),
-(3, 'asdf', '2023-10-19 09:58:25', 'asdfdfsadf', 0, '2023-10-19 09:58:26', '2023-10-19 09:58:26', 20, 20),
-(4, 'Hello rain', '2023-10-19 10:02:07', 'testing message', 0, '2023-10-19 10:02:08', '2023-10-19 10:02:08', 20, 24),
-(5, 'hi Bob', '2023-10-19 10:03:24', 'hi', 0, '2023-10-19 10:03:24', '2023-10-19 10:03:24', 24, 20);
+INSERT INTO `Messages` (`id`, `subject`, `date`, `content`, `isDeleted`, `createdAt`, `updatedAt`, `senderUserId`, `recipientUserId`, `read`) VALUES
+(85, 'interested in job', '2023-10-26 10:39:37', 'interested in job', 0, '2023-10-26 10:40:04', '2023-10-26 10:46:44', 20, 24, 1),
+(86, 'interested in job', '2023-10-26 10:40:37', 'interested in job', 0, '2023-10-26 10:41:10', '2023-10-26 10:41:10', 20, 24, 0),
+(87, 'interested in job', '2023-10-26 10:42:41', 'interested in job', 0, '2023-10-26 10:43:08', '2023-10-26 10:43:08', 20, 24, 0),
+(88, 'interested in job', '2023-10-26 10:45:02', 'interested in job', 0, '2023-10-26 10:45:24', '2023-10-26 10:45:24', 20, 24, 0),
+(89, 'b', '2023-10-26 13:12:07', 'b', 0, '2023-10-26 13:12:08', '2023-10-26 13:12:17', 20, 20, 1),
+(90, 'New Job Application', '2023-10-26 13:14:03', 'A new application has been submitted for your job listing (Job ID: 77).', 0, '2023-10-26 13:14:03', '2023-10-26 13:14:03', 24, 20, 0),
+(91, 'You\'ve been chosen for a job', '2023-10-26 13:16:02', 'Congratulations! You have been chosen for the job: one-time gardening project.', 0, '2023-10-26 13:16:02', '2023-10-26 13:16:02', 20, 24, 0),
+(92, 'New Job Application', '2023-10-26 13:17:00', 'A new application has been submitted for your job listing (Job ID: 78).', 0, '2023-10-26 13:17:00', '2023-10-26 13:17:00', 24, 20, 0);
 
 -- --------------------------------------------------------
 
@@ -281,15 +332,20 @@ CREATE TABLE `SavedJobs` (
 --
 
 INSERT INTO `SavedJobs` (`id`, `userId`, `jobId`, `createdAt`, `updatedAt`) VALUES
-(37, 24, 15, '2023-10-18 08:09:40', '2023-10-18 08:09:40'),
-(38, 24, 12, '2023-10-18 08:09:59', '2023-10-18 08:09:59'),
-(39, 24, 16, '2023-10-18 08:10:01', '2023-10-18 08:10:01'),
-(40, 24, 17, '2023-10-18 08:10:03', '2023-10-18 08:10:03'),
-(45, 20, 14, '2023-10-18 21:35:14', '2023-10-18 21:35:14'),
-(46, 20, 14, '2023-10-18 21:35:16', '2023-10-18 21:35:16'),
-(51, 20, 16, '2023-10-18 21:35:46', '2023-10-18 21:35:46'),
-(53, 20, 21, '2023-10-18 21:35:48', '2023-10-18 21:35:48'),
-(73, 20, 13, '2023-10-19 10:13:44', '2023-10-19 10:13:44');
+(131, 20, 57, '2023-10-21 08:24:31', '2023-10-21 08:24:31'),
+(135, 20, 37, '2023-10-21 09:37:24', '2023-10-21 09:37:24'),
+(137, 20, 25, '2023-10-21 10:11:21', '2023-10-21 10:11:21'),
+(139, 20, 15, '2023-10-21 10:12:54', '2023-10-21 10:12:54'),
+(140, 20, 12, '2023-10-21 10:12:55', '2023-10-21 10:12:55'),
+(142, 20, 34, '2023-10-22 00:28:24', '2023-10-22 00:28:24'),
+(144, 20, 58, '2023-10-22 00:29:58', '2023-10-22 00:29:58'),
+(145, 20, 26, '2023-10-22 00:30:03', '2023-10-22 00:30:03'),
+(146, 20, 33, '2023-10-22 01:02:52', '2023-10-22 01:02:52'),
+(149, 24, 59, '2023-10-22 07:06:14', '2023-10-22 07:06:14'),
+(150, 20, 59, '2023-10-22 08:48:45', '2023-10-22 08:48:45'),
+(154, 20, 56, '2023-10-22 08:56:14', '2023-10-22 08:56:14'),
+(155, 20, 60, '2023-10-22 09:17:35', '2023-10-22 09:17:35'),
+(156, 20, 41, '2023-10-25 22:58:09', '2023-10-25 22:58:09');
 
 -- --------------------------------------------------------
 
@@ -321,7 +377,8 @@ INSERT INTO `SequelizeMeta` (`name`) VALUES
 ('20231017051841-create-applications.js'),
 ('20231017051927-create-applications.js'),
 ('20231017052007-create-applications.js'),
-('20231019092829-update-message-model.js');
+('20231019092829-update-message-model.js'),
+('20231022093948-add_read_field_to_messages.js');
 
 -- --------------------------------------------------------
 
@@ -367,7 +424,19 @@ INSERT INTO `UserProfiles` (`id`, `dateOfBirth`, `gender`, `bio`, `avatar`, `cre
 (41, '1970-06-09', 'Female', 'Hi, I am noahjohnson888, and I am passionate about exploring the frontiers of technology.', '27', '2023-10-16 00:24:55', '2023-10-16 00:24:55', 42),
 (42, '1983-01-12', 'Male', 'Hi, I am isabellabrown123, and I am driven by a desire to innovate and create positive change.', '8', '2023-10-16 00:25:03', '2023-10-16 00:25:03', 43),
 (43, '1992-11-07', 'Male', 'Hi, I am a user with no specific bio.', '9', '2023-10-16 00:25:08', '2023-10-16 00:25:08', 44),
-(47, NULL, NULL, NULL, NULL, '2023-10-19 21:35:39', '2023-10-19 21:35:39', NULL);
+(47, NULL, NULL, NULL, NULL, '2023-10-19 21:35:39', '2023-10-19 21:35:39', NULL),
+(48, NULL, NULL, NULL, NULL, '2023-10-19 22:12:52', '2023-10-19 22:12:52', 54),
+(49, NULL, NULL, NULL, NULL, '2023-10-21 01:31:29', '2023-10-21 01:31:29', NULL),
+(50, NULL, NULL, NULL, NULL, '2023-10-22 04:41:48', '2023-10-22 04:41:48', NULL),
+(51, NULL, NULL, NULL, NULL, '2023-10-22 04:44:21', '2023-10-22 04:44:21', NULL),
+(52, NULL, NULL, NULL, NULL, '2023-10-22 04:47:17', '2023-10-22 04:47:17', NULL),
+(53, NULL, NULL, NULL, NULL, '2023-10-22 04:48:22', '2023-10-22 04:48:22', NULL),
+(54, NULL, NULL, NULL, NULL, '2023-10-22 04:49:37', '2023-10-22 04:49:37', NULL),
+(55, NULL, NULL, NULL, NULL, '2023-10-23 22:10:58', '2023-10-23 22:10:58', NULL),
+(56, NULL, NULL, NULL, NULL, '2023-10-25 09:32:19', '2023-10-25 09:32:19', NULL),
+(57, NULL, NULL, NULL, NULL, '2023-10-26 08:17:34', '2023-10-26 08:17:34', NULL),
+(58, NULL, NULL, NULL, NULL, '2023-10-26 08:19:27', '2023-10-26 08:19:27', 66),
+(59, NULL, NULL, NULL, NULL, '2023-10-26 12:38:17', '2023-10-26 12:38:17', 67);
 
 -- --------------------------------------------------------
 
@@ -467,7 +536,10 @@ INSERT INTO `Users` (`id`, `username`, `email`, `password`, `firstName`, `lastNa
 (41, 'masonlewis90', 'masonlewis90@example.com', '$2b$10$n8mf8/VCHyZPoRjPv4dhT.4toGw0G8cEY0fDAHGy4dTZiwcYxQdz.', 'Mason', 'Lewis', '2023-10-16 00:24:45', '2023-10-16 00:24:45'),
 (42, 'chloeclark567', 'chloeclark567@example.com', '$2b$10$XBH4EwwSTJ7FrSAVZ9lmQuBbE7jlD5MHfoQtuR3DJh6CheZ1q39ZK', 'Chloe', 'Clark', '2023-10-16 00:24:55', '2023-10-16 00:24:55'),
 (43, 'noahjohnson888', 'noahjohnson888@example.com', '$2b$10$nFq/qGPFJKMxUF6m20Vwb.vcGWrhiN.V9.2sf2ObnLogmC0Rv9dHy', 'Noah', 'Johnson', '2023-10-16 00:25:03', '2023-10-16 00:25:03'),
-(44, 'isabellabrown123', 'isabellabrown123@example.com', '$2b$10$5UO8M9BSJjkebg6TC8BTYe9YLgAWFPhKZevbchwnqmyXBsD4rZFPi', 'Isabella', 'Brown', '2023-10-16 00:25:08', '2023-10-16 00:25:08');
+(44, 'isabellabrown123', 'isabellabrown123@example.com', '$2b$10$5UO8M9BSJjkebg6TC8BTYe9YLgAWFPhKZevbchwnqmyXBsD4rZFPi', 'Isabella', 'Brown', '2023-10-16 00:25:08', '2023-10-16 00:25:08'),
+(54, 'basehunter459', 'basehunter459@gmail.com', '$2b$10$YTaZO97wKbTUahIX4unVfeHxKVtleW6JmUaWGrSJVXQ.fSiaBrf/C', 'base', 'hunter', '2023-10-19 22:12:52', '2023-10-19 22:12:52'),
+(66, 'Striker7960', 'striker7980@example.com', '$2b$10$j83AtPhjwjgoz59ezp7.muSbjXoGyvc7ZPL.3OIMlAADPvwJaELCq', 'David', 'Smith', '2023-10-26 08:19:27', '2023-10-26 08:19:27'),
+(67, 'admin', 'admin@email.com', '$2b$10$yqhbvapqNUopBTJvGz7zY.MO0Y.PUwouIQpWihNVvZM2MWnRyJCrm', 'admin', 'admin', '2023-10-26 12:38:16', '2023-10-26 12:38:16');
 
 --
 -- Indexes for dumped tables
@@ -495,7 +567,7 @@ ALTER TABLE `Jobs`
   ADD KEY `user_id` (`user_id`),
   ADD KEY `category_id` (`category_id`),
   ADD KEY `location_id` (`location_id`),
-  ADD KEY `Jobs_ibfk_118` (`selected_user`);
+  ADD KEY `selected_user` (`selected_user`);
 
 --
 -- Indexes for table `Locations`
@@ -557,7 +629,58 @@ ALTER TABLE `Users`
   ADD UNIQUE KEY `email_8` (`email`),
   ADD UNIQUE KEY `email_9` (`email`),
   ADD UNIQUE KEY `email_10` (`email`),
-  ADD UNIQUE KEY `email_11` (`email`);
+  ADD UNIQUE KEY `email_11` (`email`),
+  ADD UNIQUE KEY `email_12` (`email`),
+  ADD UNIQUE KEY `email_13` (`email`),
+  ADD UNIQUE KEY `email_14` (`email`),
+  ADD UNIQUE KEY `email_15` (`email`),
+  ADD UNIQUE KEY `email_16` (`email`),
+  ADD UNIQUE KEY `email_17` (`email`),
+  ADD UNIQUE KEY `email_18` (`email`),
+  ADD UNIQUE KEY `email_19` (`email`),
+  ADD UNIQUE KEY `email_20` (`email`),
+  ADD UNIQUE KEY `email_21` (`email`),
+  ADD UNIQUE KEY `email_22` (`email`),
+  ADD UNIQUE KEY `email_23` (`email`),
+  ADD UNIQUE KEY `email_24` (`email`),
+  ADD UNIQUE KEY `email_25` (`email`),
+  ADD UNIQUE KEY `email_26` (`email`),
+  ADD UNIQUE KEY `email_27` (`email`),
+  ADD UNIQUE KEY `email_28` (`email`),
+  ADD UNIQUE KEY `email_29` (`email`),
+  ADD UNIQUE KEY `email_30` (`email`),
+  ADD UNIQUE KEY `email_31` (`email`),
+  ADD UNIQUE KEY `email_32` (`email`),
+  ADD UNIQUE KEY `email_33` (`email`),
+  ADD UNIQUE KEY `email_34` (`email`),
+  ADD UNIQUE KEY `email_35` (`email`),
+  ADD UNIQUE KEY `email_36` (`email`),
+  ADD UNIQUE KEY `email_37` (`email`),
+  ADD UNIQUE KEY `email_38` (`email`),
+  ADD UNIQUE KEY `email_39` (`email`),
+  ADD UNIQUE KEY `email_40` (`email`),
+  ADD UNIQUE KEY `email_41` (`email`),
+  ADD UNIQUE KEY `email_42` (`email`),
+  ADD UNIQUE KEY `email_43` (`email`),
+  ADD UNIQUE KEY `email_44` (`email`),
+  ADD UNIQUE KEY `email_45` (`email`),
+  ADD UNIQUE KEY `email_46` (`email`),
+  ADD UNIQUE KEY `email_47` (`email`),
+  ADD UNIQUE KEY `email_48` (`email`),
+  ADD UNIQUE KEY `email_49` (`email`),
+  ADD UNIQUE KEY `email_50` (`email`),
+  ADD UNIQUE KEY `email_51` (`email`),
+  ADD UNIQUE KEY `email_52` (`email`),
+  ADD UNIQUE KEY `email_53` (`email`),
+  ADD UNIQUE KEY `email_54` (`email`),
+  ADD UNIQUE KEY `email_55` (`email`),
+  ADD UNIQUE KEY `email_56` (`email`),
+  ADD UNIQUE KEY `email_57` (`email`),
+  ADD UNIQUE KEY `email_58` (`email`),
+  ADD UNIQUE KEY `email_59` (`email`),
+  ADD UNIQUE KEY `email_60` (`email`),
+  ADD UNIQUE KEY `email_61` (`email`),
+  ADD UNIQUE KEY `email_62` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -567,7 +690,7 @@ ALTER TABLE `Users`
 -- AUTO_INCREMENT for table `Applications`
 --
 ALTER TABLE `Applications`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `Categories`
@@ -579,7 +702,7 @@ ALTER TABLE `Categories`
 -- AUTO_INCREMENT for table `Jobs`
 --
 ALTER TABLE `Jobs`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT for table `Locations`
@@ -591,19 +714,19 @@ ALTER TABLE `Locations`
 -- AUTO_INCREMENT for table `Messages`
 --
 ALTER TABLE `Messages`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT for table `SavedJobs`
 --
 ALTER TABLE `SavedJobs`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
 
 --
 -- AUTO_INCREMENT for table `UserProfiles`
 --
 ALTER TABLE `UserProfiles`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `UserReviews`
@@ -615,7 +738,7 @@ ALTER TABLE `UserReviews`
 -- AUTO_INCREMENT for table `Users`
 --
 ALTER TABLE `Users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- Constraints for dumped tables
@@ -625,16 +748,17 @@ ALTER TABLE `Users`
 -- Constraints for table `Applications`
 --
 ALTER TABLE `Applications`
-  ADD CONSTRAINT `Applications_ibfk_23` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `Applications_ibfk_24` FOREIGN KEY (`job_id`) REFERENCES `Jobs` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD CONSTRAINT `Applications_ibfk_125` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `Applications_ibfk_126` FOREIGN KEY (`job_id`) REFERENCES `Jobs` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Constraints for table `Jobs`
 --
 ALTER TABLE `Jobs`
-  ADD CONSTRAINT `Jobs_ibfk_148` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `Jobs_ibfk_149` FOREIGN KEY (`category_id`) REFERENCES `Categories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `Jobs_ibfk_150` FOREIGN KEY (`location_id`) REFERENCES `Locations` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `Jobs_ibfk_301` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `Jobs_ibfk_302` FOREIGN KEY (`category_id`) REFERENCES `Categories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `Jobs_ibfk_303` FOREIGN KEY (`location_id`) REFERENCES `Locations` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `Jobs_ibfk_304` FOREIGN KEY (`selected_user`) REFERENCES `Users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Constraints for table `Messages`
@@ -647,8 +771,8 @@ ALTER TABLE `Messages`
 -- Constraints for table `SavedJobs`
 --
 ALTER TABLE `SavedJobs`
-  ADD CONSTRAINT `SavedJobs_ibfk_23` FOREIGN KEY (`userId`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `SavedJobs_ibfk_24` FOREIGN KEY (`jobId`) REFERENCES `Jobs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `SavedJobs_ibfk_125` FOREIGN KEY (`userId`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `SavedJobs_ibfk_126` FOREIGN KEY (`jobId`) REFERENCES `Jobs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `UserProfiles`
@@ -660,8 +784,8 @@ ALTER TABLE `UserProfiles`
 -- Constraints for table `UserReviews`
 --
 ALTER TABLE `UserReviews`
-  ADD CONSTRAINT `UserReviews_ibfk_23` FOREIGN KEY (`jobId`) REFERENCES `Jobs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `UserReviews_ibfk_24` FOREIGN KEY (`reviewerUserId`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `UserReviews_ibfk_125` FOREIGN KEY (`jobId`) REFERENCES `Jobs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `UserReviews_ibfk_126` FOREIGN KEY (`reviewerUserId`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

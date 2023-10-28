@@ -1,11 +1,11 @@
 version: "3.8"
 services:
 
-  # tradeapp:
-  #   build:
-  #     context: ./Submodules/tradeapp
-  #   ports:
-  #     - "3010:3000"
+  tradeapp:
+    build:
+      context: ./Submodules/tradeapp
+    ports:
+      - "3010:3000"
 
   mysql:
     image: mysql
@@ -35,4 +35,3 @@ services:
       - "5050:5000"
     environment:
       DB_HOST: mysql # Link to MySQL service name
-      MONGO_URL: mongodb://mongo:27017/mydb # Link to MongoDB service name
