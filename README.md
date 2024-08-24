@@ -1,60 +1,63 @@
-# Pin'n'Grab
+# Pin'n'Grab - Job Marketplace Platform
 
-Pin'n'Grab is a comprehensive job marketplace application designed to connect service providers with clients. It utilizes a modern tech stack including Docker for containerization, React for the frontend, Express.js for the backend, and MySQL for the database.
+## Project Overview
+Pin'n'Grab is a comprehensive job marketplace application designed to connect service providers with clients. This project was developed as part of my school curriculum to demonstrate proficiency in full-stack development, containerization, and database management.
 
-## Project Structure
+## Repository Structure
+This project is split across three repositories:
 
-The project is organized using Docker Compose with the following main components:
+1. **Main Repository (Current)**: 
+   - Contains the Docker configuration and overall project structure
+   - GitHub: [[Link to this repository]](https://github.com/dev-alt/Pin-N-Grab)
 
-- `tradeapp`: Frontend React application
-- `tradeapp-backend`: Backend Express.js application
-- `mysql`: MySQL database
-- `phpmyadmin`: PHP-based administration tool for MySQL
+2. **Frontend Repository**: 
+   - Contains the React-based frontend code
+   - GitHub: [[Link to frontend repository]](https://github.com/dev-alt/Pin-N-Grab-React)
 
-## Prerequisites
+3. **Backend Repository**:
+   - Contains the Express.js-based backend code
+   - GitHub: [[Link to backend repository]](https://github.com/dev-alt/Pin-N-Grab-Backend)
 
-- Docker and Docker Compose
-- Git
+## Key Technologies
+- Frontend: React
+- Backend: Express.js
+- Database: MySQL
+- Containerization: Docker
+- API Testing: Postman
 
-## Setup and Installation
+## Features
+- User authentication and profiles
+- Job posting and management
+- Job search and filtering
+- Messaging system between users
+- Review and rating system
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/dev-alt/pin-n-grab.git
-   cd pin-n-grab
-   ```
+## Running the Project
+Detailed instructions for setting up and running the project can be found in the Docker configuration file in this repository.
 
-2. Initialize and update the submodules:
-   ```
-   git submodule init
-   git submodule update
-   ```
+## My Role and Contributions
+As the sole developer of this project, I was responsible for:
+- Designing the overall system architecture
+- Implementing the frontend user interface
+- Developing the backend API and database schema
+- Setting up Docker for easy deployment
+- [Any other specific contributions or challenges you overcame]
 
-3. Start the application using Docker Compose:
-   ```
-   docker-compose up -d
-   ```
+## Learning Outcomes
+Through this project, I gained practical experience in:
+- Full-stack JavaScript development
+- Working with microservices architecture
+- Database design and management
+- Containerization and deployment strategies
+- [Any other significant learnings]
 
-4. Access the applications:
-   - Frontend: http://localhost:3010
-   - Backend: http://localhost:5050
-   - PHPMyAdmin: http://localhost:8080
+## Future Enhancements
+While the current version meets the project requirements, given more time, I would like to add:
+- Real-time notifications using WebSockets
+- Integration with a payment gateway
+- Mobile responsive design
+- [Any other ideas you have for improving the project]
 
-## Database
+## Contact
+If you have any questions about this project or would like to discuss it further, please feel free to contact me at [Your Email or LinkedIn profile].
 
-The MySQL database is initialized with a dump file located in the `mysql-dump` directory. This includes essential tables such as Users, Jobs, Categories, and more.
-
-## Development
-
-- Frontend code is located in the `Submodules/tradeapp` directory
-- Backend code is located in the `Submodules/tradeapp-backend` directory
-
-To make changes, modify the code in these directories and rebuild the Docker containers.
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
