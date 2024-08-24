@@ -20,7 +20,7 @@ The project is organized using Docker Compose with the following main components
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/pin-n-grab.git
+   git clone https://github.com/dev-alt/pin-n-grab.git
    cd pin-n-grab
    ```
 
