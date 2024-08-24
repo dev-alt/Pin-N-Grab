@@ -58,6 +58,4 @@ While the current version meets the project requirements, given more time, I wou
 - Mobile responsive design
 - [Any other ideas you have for improving the project]
 
-## Contact
-If you have any questions about this project or would like to discuss it further, please feel free to contact me at [Your Email or LinkedIn profile].
 
